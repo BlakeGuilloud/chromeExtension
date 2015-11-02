@@ -1,0 +1,22 @@
+{
+  "name": "chromeExtension",
+  "homepage": "https://github.com/BlakeGuilloud/chromeExtension",
+  "authors": [
+    "Blake Guilloud <fbguillo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3"
+  }
+}
