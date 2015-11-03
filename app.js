@@ -1,7 +1,7 @@
 $(document).ready(function(){
   page.init()
 });
-
+var zipCode = 29403;
 var page = {
   // var state = 'SC';
   // var city = 'Charleston';
@@ -13,10 +13,10 @@ var page = {
   },
   styling: function(){
     $.ajax({
-      url: "http://api.wunderground.com/api/154ffd2282f789ce/conditions/q/SC/Charleston.json",
+      url: "http://api.wunderground.com/api/154ffd2282f789ce/conditions/q/" + zipCode + ".json",
       method: 'GET',
       success: function(data){
-        $('.weather').append(
+        $('.weather').html(
         '<img src = "' + data.current_observation.icon_url + '">'
         + '<h2>' + 'The weather in '
         + data.current_observation.display_location.full
@@ -47,14 +47,15 @@ var page = {
 
 
   events: function(){
-  //   $('.location').on('submit', function(event){
-  //     event.preventDefault();
-  //     var location = $("input").val();
-  //     page.styling();
-  //     });
-  // }
+    $('.location').on('submit', function(event){
+      event.preventDefault();
+
+      zipCode = $(".text").val();
+      page.styling();
+      });
+  }
   // url: "http://api.wunderground.com/api/154ffd2282f789ce/conditions/q/"+location+".json",
-}
+
 }
 //
 //
